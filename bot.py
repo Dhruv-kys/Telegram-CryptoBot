@@ -3,15 +3,19 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
 from PIL import Image
 import io
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Bot configuration - Using environment variables for deployment
-BOT_TOKEN = os.getenv('BOT_TOKEN', '8245833868:AAFjg0p0xB4CO56plQGBNfbVVaZTAjwnROM')
+BOT_TOKEN = os.getenv('BOT_TOKEN')
 ADMIN_USERNAME = os.getenv('ADMIN_USERNAME', '@Abhijeet_btc')
 WELCOME_IMAGE_PATH = os.getenv('WELCOME_IMAGE_PATH', 'coin.jpeg')
 
 # Validate bot token exists
 if not BOT_TOKEN:
-    raise ValueError("❌ BOT_TOKEN not found! Please set it in environment variables")
+    raise ValueError("❌ BOT_TOKEN not found! Please set it in .env file or environment variables")
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Send welcome message when /start command is issued"""
