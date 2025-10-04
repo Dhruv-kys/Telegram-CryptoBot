@@ -1,0 +1,37 @@
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+
+# VSCode settings
+.vscode/
+
+# Python virtual environment (if you have one inside this folder)
+venv/
+env/
+ENV/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Python egg / distribution files
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Ignore images if you don’t want to track them
+# coin.jpeg
+# *.jpg
+# *.png
+
+# Other files you may not want to commit
+*.sqlite3
+*.db
